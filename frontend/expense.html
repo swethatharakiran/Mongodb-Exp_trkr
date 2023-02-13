@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily-Expenses</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+</head>
+<body style="background-color:chartreuse">
+    <div class="container-sm">
+    <div class="row">
+        <div class="col offset-md-8">
+        <button><a href="login.html">Logout</a></button>
+        </div>    </div> </div>        
+      
+        <div class="container-sm">
+            <div class="row">
+                <div class="col offset-md-3">
+                     <h2>Add Daily-Expenses</h2>
+            <form id="expenseform" method="POST" class="bg-info border border-primary rounded" style="width:300px;padding:10px">         
+                <label><b>Money spent</b></label><br>
+                <input type="number" id="amount" name="amount"><br><br>
+                <label><b>description</b></label><br>
+                <input type="text" id="desc" name="desc"><br><br>
+                <label><b>category</b></label><br>
+                <select id="category">
+                    <option selected disabled>Choose one</option>
+                    <option value="Movie">Movie</option>
+                    <option value="Fashion">Fashion</option>
+                    <option value="Electronic goods">Electronic goods</option>
+                    <option value="Vacation">Vacation</option>
+                    <option value="Luxury">Luxury</option>
+                    <option value="Food">Food</option>
+                    <option value="Fuel">Fuel</option>
+                    <option value="Home decore">Home decore</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Household items">Household items</option>
+                </select>
+                <br>
+                <br>
+                <input type="submit" name="addexpense" value="Add Expense">
+            </form>
+            <br>
+            <div id="premium">
+            <button id="razorpay-btn" class="btn btn-secondary">Buy Premium Membership</button>
+                
+        </div>
+         <br> 
+         <div style="width:400px; padding:10px" >
+            <table id="leaderboard" class="table">
+            </table>
+            </div>
+     
+        <button  onclick="download()" id="downloadexpense">Download Expense File</button>
+        <br><br>
+            <div class="bg-info border rounded", style="width:500px; padding:10px">
+                <h4>EXPENSE LIST</h4>
+                <table id="expenselist" class="table">   
+                    <!--caption>EXPENSE LIST</caption>
+                <thead>
+                    <tr>
+                        <th>Money Spent</th>
+                        <th>Description</th>
+                        <th>Category</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                    </thead-->                 
+                        
+                </table>
+                
+            <!--ul id="expenselist" >
+                <h1>Your Expense list</h1>
+            </ul-->
+        </div>
+           <br>
+            <div id="pagination">
+
+            </div>
+            <br>
+                <label><b>Items per page</b></label>
+                <select id="selectbox" onchange="changefunc();">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select><br><br>
+            
+            
+            
+            <!--ul id="downloadedfiles">
+                <h3>List of files downloaded so far</h3>
+
+            </ul-->
+          </div>
+        </div>
+    </div>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js"></script>
+ <script src="expense_frntend.js"></script> 
+</body>
+</html>
